@@ -1,0 +1,196 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=windows-1252"> 
+  <title>Coverage Report > productService</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.jtspringproject.JtSpringProject.services</a>
+</div>
+
+<h1>Coverage Summary for Class: productService (com.jtspringproject.JtSpringProject.services)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">productService</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/6)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/7)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">productService$MockitoMock$1685525245</td>
+  </tr>
+  <tr>
+    <td class="name">productService$MockitoMock$1685525245$auxiliary$0g4z0e3g</td>
+  </tr>
+  <tr>
+    <td class="name">productService$MockitoMock$1685525245$auxiliary$ALGPpPP2</td>
+  </tr>
+  <tr>
+    <td class="name">productService$MockitoMock$1685525245$auxiliary$F7qCs2Fk</td>
+  </tr>
+  <tr>
+    <td class="name">productService$MockitoMock$1685525245$auxiliary$mot4qhrd</td>
+  </tr>
+  <tr>
+    <td class="name">productService$MockitoMock$1685525245$auxiliary$pOhMzbZ3</td>
+  </tr>
+  <tr>
+    <td class="name">productService$MockitoMock$1685525245$auxiliary$TGqnLdPw</td>
+  </tr>
+  <tr>
+    <td class="name">productService$MockitoMock$1685525245$auxiliary$Y5tOgdrI</td>
+  </tr>
+  <tr>
+    <td class="name">productService$MockitoMock$1785728400</td>
+  </tr>
+  <tr>
+    <td class="name">productService$MockitoMock$1785728400$auxiliary$6jbcUOnC</td>
+  </tr>
+  <tr>
+    <td class="name">productService$MockitoMock$1785728400$auxiliary$BPOlkdmD</td>
+  </tr>
+  <tr>
+    <td class="name">productService$MockitoMock$1785728400$auxiliary$DoAgeRkY</td>
+  </tr>
+  <tr>
+    <td class="name">productService$MockitoMock$1785728400$auxiliary$hgzAoTXt</td>
+  </tr>
+  <tr>
+    <td class="name">productService$MockitoMock$1785728400$auxiliary$iGs91jvg</td>
+  </tr>
+  <tr>
+    <td class="name">productService$MockitoMock$1785728400$auxiliary$RMlfrsi9</td>
+  </tr>
+  <tr>
+    <td class="name">productService$MockitoMock$1785728400$auxiliary$XXjBnpUv</td>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/6)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/7)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.jtspringproject.JtSpringProject.services;
+&nbsp;
+&nbsp;import java.util.List;
+&nbsp;
+&nbsp;import org.springframework.beans.factory.annotation.Autowired;
+&nbsp;import org.springframework.stereotype.Service;
+&nbsp;
+&nbsp;import com.jtspringproject.JtSpringProject.dao.productDao;
+&nbsp;import com.jtspringproject.JtSpringProject.models.Product;
+&nbsp;
+&nbsp;@Service
+<b class="nc">&nbsp;public class productService {</b>
+&nbsp;	@Autowired
+&nbsp;	private productDao productDao;
+&nbsp;	
+&nbsp;	public List&lt;Product&gt; getProducts(){
+<b class="nc">&nbsp;		return this.productDao.getProducts();</b>
+&nbsp;	}
+&nbsp;	
+&nbsp;	public Product addProduct(Product product) {
+<b class="nc">&nbsp;		return this.productDao.addProduct(product);</b>
+&nbsp;	}
+&nbsp;	
+&nbsp;	public Product getProduct(int id) {
+<b class="nc">&nbsp;		return this.productDao.getProduct(id);</b>
+&nbsp;	}
+&nbsp;
+&nbsp;	public Product updateProduct(int id,Product product){
+<b class="nc">&nbsp;		product.setId(id);</b>
+<b class="nc">&nbsp;		return this.productDao.updateProduct(product);</b>
+&nbsp;	}
+&nbsp;	public boolean deleteProduct(int id) {
+<b class="nc">&nbsp;		return this.productDao.deletProduct(id);</b>
+&nbsp;	}
+&nbsp;
+&nbsp;
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2023-12-01 23:15</div>
+</div>
+</body>
+</html>

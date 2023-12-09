@@ -1,0 +1,168 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=windows-1252"> 
+  <title>Coverage Report > categoryDao</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.jtspringproject.JtSpringProject.dao</a>
+</div>
+
+<h1>Coverage Summary for Class: categoryDao (com.jtspringproject.JtSpringProject.dao)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">categoryDao</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    85.7%
+  </span>
+  <span class="absValue">
+    (6/7)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    80%
+  </span>
+  <span class="absValue">
+    (16/20)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.jtspringproject.JtSpringProject.dao;
+&nbsp;
+&nbsp;import java.util.List;
+&nbsp;
+&nbsp;import org.hibernate.Session;
+&nbsp;import org.hibernate.SessionFactory;
+&nbsp;import org.springframework.beans.factory.annotation.Autowired;
+&nbsp;import org.springframework.stereotype.Repository;
+&nbsp;import org.springframework.transaction.annotation.Transactional;
+&nbsp;
+&nbsp;import com.jtspringproject.JtSpringProject.models.Category;
+&nbsp;
+&nbsp;@Repository
+<b class="fc">&nbsp;public class categoryDao {</b>
+&nbsp;	@Autowired
+&nbsp;	private SessionFactory sessionFactory;
+&nbsp;
+&nbsp;	public void setSessionFactory(SessionFactory sf) {
+<b class="fc">&nbsp;		this.sessionFactory = sf;</b>
+&nbsp;	}
+&nbsp;
+&nbsp;	@Transactional
+&nbsp;	public Category addCategory(String name) {
+<b class="fc">&nbsp;		Category category = new Category();</b>
+<b class="fc">&nbsp;		category.setName(name);</b>
+<b class="fc">&nbsp;		this.sessionFactory.getCurrentSession().saveOrUpdate(category);</b>
+<b class="fc">&nbsp;		return category;</b>
+&nbsp;	}
+&nbsp;
+&nbsp;	@Transactional
+&nbsp;	public List&lt;Category&gt; getCategories() {
+<b class="nc">&nbsp;		return this.sessionFactory.getCurrentSession().createQuery(&quot;from CATEGORY&quot;).list();</b>
+&nbsp;	}
+&nbsp;
+&nbsp;	@Transactional
+&nbsp;	public Boolean deleteCategory(int id) {
+&nbsp;		try {
+<b class="fc">&nbsp;			Session session = this.sessionFactory.getCurrentSession();</b>
+<b class="fc">&nbsp;			Object persistenceInstance = session.load(Category.class, id);</b>
+&nbsp;
+<b class="fc">&nbsp;			if (persistenceInstance != null) {</b>
+<b class="fc">&nbsp;				session.delete(persistenceInstance);</b>
+<b class="fc">&nbsp;				return true;</b>
+&nbsp;			}
+<b class="nc">&nbsp;			return false;</b>
+<b class="nc">&nbsp;		} catch (Exception e) {</b>
+<b class="nc">&nbsp;			return false;</b>
+&nbsp;		}
+&nbsp;	}
+&nbsp;
+&nbsp;	@Transactional
+&nbsp;	public Category updateCategory(int id, String name) {
+<b class="fc">&nbsp;		Category category = this.sessionFactory.getCurrentSession().get(Category.class, id);</b>
+<b class="fc">&nbsp;		category.setName(name);</b>
+&nbsp;
+<b class="fc">&nbsp;		this.sessionFactory.getCurrentSession().update(category);</b>
+<b class="fc">&nbsp;		return category;</b>
+&nbsp;	}
+&nbsp;
+&nbsp;	@Transactional
+&nbsp;	public Category getCategory(int id) {
+<b class="fc">&nbsp;		return this.sessionFactory.getCurrentSession().get(Category.class,id);</b>
+&nbsp;	}
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2023-12-01 23:15</div>
+</div>
+</body>
+</html>
