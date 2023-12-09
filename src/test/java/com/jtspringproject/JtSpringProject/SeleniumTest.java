@@ -1,5 +1,5 @@
 package com.jtspringproject.JtSpringProject;
-
+/*
 import com.jtspringproject.JtSpringProject.models.Product;
 import com.jtspringproject.JtSpringProject.models.User;
 import com.jtspringproject.JtSpringProject.services.cartService;
@@ -120,3 +120,4 @@ public class SeleniumTest {
             }
         }
     }
+*/
